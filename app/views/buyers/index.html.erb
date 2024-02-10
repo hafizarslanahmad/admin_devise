@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Buyer Name</th>
+      <th scope="col">Salar Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @buyers.each do |buyer|%>
+       <tr>
+        <th scope="row"><%= buyer.id%></th>
+        <td><%= buyer.name%></td>
+        <td><%= buyer.city%></td>
+        <td><%= link_to "edit", edit_buyer_path(buyer.id)%></td>
+        <td><%= link_to "show", buyer_path(buyer.id)%></td>
+        <td><%= button_to "delete", buyer_path(buyer.id), method: :delete %></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>

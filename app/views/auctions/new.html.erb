@@ -1,0 +1,14 @@
+<h1>Create Auction</h1>
+
+<div class="row justify-content-center">
+  <%= form_with model: @auction  do |form|%>
+    <%= form.hidden_field :user_id, value: current_user.id %>    
+    <div class="form-group">
+      <%=form.label :Product_Name%><br>
+      <%= form.text_field :product_name, placeholder: 'Enter Product Name'%>
+    </div><br>
+    <div class="form-group">
+          <%= form.submit "Create Auction", class: 'btn btn-primary'%>
+        </div>
+  <%end%>
+</div>

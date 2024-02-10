@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Salar Name</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">City Name</th>
+      <th scope="col">User Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @salars.each do |salar|%>
+       <tr>
+        <th scope="row"><%= salar.id%></th>
+        <td><%= salar.salar_name%></td>
+        <td><%= salar.product_name%></td>
+        <td><%= salar.city%></td>
+        <td><%= salar.user.email%></td>
+        <td><%= link_to "edit", edit_salar_path(salar.id)%></td>
+        <td><%= link_to "show", salar_path(salar.id)%></td>
+        <td><%= button_to "delete", salar_path(salar.id), method: :delete %></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>

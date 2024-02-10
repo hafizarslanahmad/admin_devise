@@ -1,0 +1,31 @@
+<h1>Show Salar</h1>
+
+<strong> Salar_Name: </strong>
+<%= @salar.salar_name %>
+<br>
+<strong> Product_Name: </strong>
+<%= @salar.product_name %>
+<br>
+<strong> City_Name: </strong>
+<%= @salar.city %>
+<br>
+
+
+<h1>Create Buyer</h1>
+
+<div class="row justify-content-center">
+  <%= form_with model: @buyer  do |form|%>
+    <%= form.hidden_field :salar_id, value: @buyer.salar_id %>    
+    <div class="form-group">
+      <%=form.label :Buyer_Name%><br>
+      <%= form.text_field :name, placeholder: 'Enter Buyer Name'%>
+    </div><br>
+    <div class="form-group">
+      <%=form.label :City_Name%><br>
+      <%= form.text_field :city, placeholder: 'Enter City Name'%>
+    </div><br>
+    <div class="form-group">
+          <%= form.submit "Create Buyer", class: 'btn btn-primary'%>
+        </div>
+  <%end%>
+</div>
